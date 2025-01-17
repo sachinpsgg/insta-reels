@@ -1,7 +1,8 @@
 "use client"
 import React from 'react';
 import {BadgeCheck, Ellipsis, HeartIcon, MessageCircle, Music, Send} from "lucide-react";
-import Ticker from "react-ticker";
+import Image from "next/image";
+import {Avatar} from "@heroui/react";
 
 const PlayerFooter = ({avatarSrc,channel,song,comments,likes,targetLink,targetProduct,onLike,isLiked}) => {
     const handleShare = () => {
@@ -22,7 +23,7 @@ const PlayerFooter = ({avatarSrc,channel,song,comments,likes,targetLink,targetPr
         <>
             <div className="relative ml-5 bottom-20">
                 <div className="absolute bottom-0 text-white flex justify-center items-center mb-5 gap-2">
-                    <img className="w-6 h-6 rounded-full" src={avatarSrc} alt="avatar"/>
+                    <Image className="rounded-full  bg-blue-600 border border-yellow-500" src={avatarSrc} alt="avatar" width={25} height={25} />
                     <h3 className="flex flex-row items-center justify-center gap-1 m-0">
                         {channel} <BadgeCheck size={10} color="white" className="mt-1"/>
                     </h3>
@@ -32,14 +33,8 @@ const PlayerFooter = ({avatarSrc,channel,song,comments,likes,targetLink,targetPr
                 </div>
 
                 <div className="h-fit ml-7 mb-2 w-8/12">
-                    <Music size={15} color="white" className="absolute left-1 mt-2"/>
-                    <Ticker mode="smooth">
-                        {() => (
-                            <div className="pt-2 text-[12px] text-white whitespace-nowrap">
-                                {song}
-                            </div>
-                        )}
-                    </Ticker>
+                    <Music size={15}  color="black" className="absolute rounded-full bg left-1 mt-2"/>
+                    <marquee className="text-white font-medium"> {song}</marquee>
                 </div>
                 <div className="absolute bottom-0 right-0 p-4">
                     <div className="flex flex-col gap-4">
