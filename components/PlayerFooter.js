@@ -2,7 +2,6 @@
 import React from 'react';
 import {BadgeCheck, Ellipsis, HeartIcon, MessageCircle, Music, Send} from "lucide-react";
 import Image from "next/image";
-import {Avatar} from "@heroui/react";
 
 const PlayerFooter = ({avatarSrc,channel,song,comments,likes,targetLink,targetProduct,onLike,isLiked}) => {
     const handleShare = () => {
